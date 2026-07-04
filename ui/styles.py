@@ -222,8 +222,6 @@ def load_css(theme="dark"):
     html,
     body,
     .stApp,
-    div,
-    span,
     p,
     label,
     small,
@@ -233,49 +231,37 @@ def load_css(theme="dark"):
     h3,
     h4,
     h5,
-    h6{
-        color:{text} !important;
-    }
-
+    h6 {{
+        color: {text};
+    }}
 /* ---------- Select Boxes ---------- */
 
-    [data-baseweb="select"] *{
-        color:{text} !important;
-    }
+div[data-baseweb="select"] > div {{
+    background: {container_bg} !important;
+    border: 1px solid {border} !important;
+    color: {text} !important;
+    border-radius: 10px;
+}}
 
-    [data-baseweb="select"]>div{
-        background:{container_bg} !important;
-        border:1px solid {border} !important;
-    }
+div[data-baseweb="popover"] {{
+    background: {container_bg} !important;
+}}
 
-/* ---------- Toggle ---------- */
+div[role="listbox"] {{
+    background: {container_bg} !important;
+}}
 
-    [data-testid="stWidgetLabel"]{
-        color:{text} !important;
-    }
+div[role="option"] {{
+    background: {container_bg} !important;
+    color: {text} !important;
+}}
 
-/* ---------- Metric ---------- */
+div[role="option"] * {{
+    color: {text} !important;
+}}
 
-    [data-testid="metric-container"]{
-        background:{container_bg};
-        border:1px solid {border};
-        border-radius:15px;
-    }
-
-    [data-testid="metric-container"] *{
-        color:{text} !important;
-    }
-
-/* ---------- DataFrame ---------- */
-
-    [data-testid="stDataFrame"] *{
-        color:{text} !important;
-    }
-
-/* ---------- Expander ---------- */
-
-    .streamlit-expanderHeader{
-        color:{text} !important;
-    }
-    </style>
-    """
+div[role="option"]:hover {{
+    background: rgba(79,70,229,.25) !important;
+}}
+</style>
+"""
